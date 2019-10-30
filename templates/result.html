@@ -1,0 +1,55 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/result.css') }}">
+
+	<div class = "container" style = "background-image: url('/static/img/galaxy.png')";>
+		<h1 id = "headerstyle"> Displaying Most Relevant Results for: <strong> "{{searchword}}" </strong></h1>
+    
+     	{% if results == [] %}
+	       <p style="color:white"> No results found for keyword: <strong> {{searchword}} </strong>. Try adding more information for more accurate/specific results. </p>
+         <div style = "padding-bottom: 35px;"></div>
+         <a class="btn btn-primary btn-block" href="/#Search" role="button">Try Another Search</a>
+     		
+      {% else %}
+      <p style = "color:white"> Try adding more information for more specific results </p>
+         	{% for item in results %}
+            <div class="card" style="width: 18rem;">
+      			<div class="card-body">
+      				<h5 class="card-header"> <strong>{{item['category']['title']}} </strong></h5>
+      				<p class="card-title">"{{item['question']}}"</p>
+      				<p class="card-text">What is: <span class = "fade-in"><i>{{item['answer']}}</i></span></p>
+      			</div>
+
+        			<ul class="list-group list-group-flush">
+        			<li class="list-group-item">Difficulty: <span class = "cash_value"><strong>{{item['value']}}</strong></span></li>
+        			<li class="list-group-item">Air Date: {{item['airdate'].split("T")[0]}}</li>
+        			<li class="list-group-item">ID: {{item['id']}}</li>
+        			</ul>
+	         </div>
+			
+
+	       {% endfor %}
+          
+          <div style = "padding-top: 50px;">
+          </div>
+
+       
+
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+              <a class="page-link" href="/random?submit=Surprise+Me">Random Question</a>
+          </li>
+    
+          <li class="page-item">
+              <a class="page-link" href="/#Search">Search Again</a>
+          </li>
+        </ul>
+      </nav>
+	     	 
+	     	
+	   {% endif %}
+   </div>
+
+{% endblock %}

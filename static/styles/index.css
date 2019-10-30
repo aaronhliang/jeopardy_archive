@@ -1,0 +1,120 @@
+
+header {
+  padding: 156px 0 100px;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-animation: myfirst 5s ; /* Chrome, Safari, Opera */
+  animation: imagefade 5s ;
+}
+
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes imagefade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Standard syntax */
+  @keyframes imagefade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+}
+
+body{
+  padding-top: 100px;
+  
+  
+}
+
+
+header h1{
+	font-size: 4vw;
+	
+}
+
+header p{
+	margin-top: 10vw;
+	font-family: 'Raleway', sans-serif;
+	background-color: navy;
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	margin-bottom: 10vw;
+}
+
+
+section {
+  padding: 150px 0;
+}
+
+.bgcustom{
+	
+	background-image: linear-gradient(to bottom right,  #1619f0, #060CE9,#9129c2);
+ 
+}            		   
+.search_text{
+  color:white;
+}
+
+
+
+.fade-in{
+	 -webkit-animation: fadein 7s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 7s; /* Firefox < 16 */
+     -ms-animation: fadein 7s; /* Internet Explorer */
+     -o-animation: fadein 7s; /* Opera < 12.1 */
+      animation: fadein 7s;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.fade-in2{
+	 -webkit-animation: fadein 10s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 10s; /* Firefox < 16 */
+     -ms-animation: fadein 10s; /* Internet Explorer */
+     -o-animation: fadein 10s; /* Opera < 12.1 */
+      animation: fadein 10s;
+}
+
+
+.search_text{
+  color:white;
+}
+@keyframes fadein2 {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#search {
+  border-bottom: 1px solid white;
+	padding-top: 3vw;
+	border-top: 0.25vw solid white;
+  background-image: linear-gradient(90deg, rgba(0,0,8,1) 62%, rgba(50,3,125,1) 90%, rgba(0,69,255,1) 100%);
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+
+
+

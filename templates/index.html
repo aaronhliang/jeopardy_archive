@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+
+
+
+{% block content %}
+<header class="text-white" style= "background-image: url('/static/img/stage_picture.png'); background-repeat: no-repeat;">
+    <div class="text-center fade-in" style= "height: 500px;">
+      <h1>WELCOME TO THE JEOPARDY CLUE ARCHIVE</h1>
+      <p class="lead fade-in2"> Explore the collection of historical Jeopardy answers that have appeared over the years</p>
+      <button type="button" class="btn btn-lg"><a href= "#Search"><img src="https://fontmeme.com/permalink/191023/cc257234a5cc758865048e4a3e2c4fe8.png" alt="Get Started" border="0"></a></button>
+    </div>
+
+</header>
+    <a name="Search">
+    <section id="search">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="search_text">Search</h2>
+          
+            <form action = "/result" method = "POST">
+            <p> <span class="search_text">
+              {{form.searchword.label}} <span style = "color:red"> * </span> : {{form.searchword(class='form-control')}}  
+            </span> </p>
+
+             <p class="search_text"> Filter By Date Range:</p>
+            <div class="search_text" style= "display: flex; flex-direction: row;justify-content: space-between;">
+               
+            {{form.date(class="form-control", placeholder='start date')}} 
+            <strong> - </strong>
+            {{form.date2(class="form-control", placeholder='end date')}}   
+
+            </div> 
+            
+            <br>
+            <p><span class="search_text"> {{form.category_ID.label}} {{form.category_ID(class='form-control', placeholder='Category ID: (ex. 123)')}} </span></p>
+            <p><span class="search_text">{{form.difficulty.label}}{{form.difficulty(class='form-control')}}</span> </p>
+
+            <p><span class="search_text">{{form.show_count.label}}{{form.show_count(class='form-control')}}</span> </p>
+             
+            <p class="search_text"> {{form.submit(class='btn btn-primary btn-block')}} </p>
+
+            </form>
+
+        
+          </div>
+        </div>
+      </div>
+
+    <a name="Random">
+      <section>
+        <div class = "container">
+          <div class="col-lg-8 mx-auto">
+            <h2 style = "color: white">Can't decide? Try a random clue</h2>
+
+              <form action = "/random">
+                {{form2.submit(class='btn btn-primary btn-block')}}
+              </form>
+
+           </div>
+        </div>          
+      </section>
+
+
+
+
+       
+{% endblock %}
